@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Comercial — Rinovva Vistorias | Canis Marketing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #086E96;
+            --primary-dark: #065676;
+            --primary-light: #e8f4fa;
+            --accent: #fbbf24;
+            --green: #10b981;
+            --dark: #1a1a2e;
+            --text: #2d2d2d;
+            --text-light: #6b7280;
+            --bg: #f8f9fc;
+            --white: #ffffff;
+            --border: #eef0f5;
+            --radius: 16px;
+            --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 16px 40px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0a5a7a 50%, #064a66 100%);
+            color: var(--white);
+            padding: 40px 32px 36px;
+            border-radius: var(--radius);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 280px;
+            height: 280px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+        }
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -15%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 50%;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .header-brand img {
+            height: 40px;
+            width: auto;
+        }
+        .header-badge {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(4px);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            position: relative;
+            letter-spacing: -0.5px;
+        }
+        .header .client-name {
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 0.9;
+            position: relative;
+        }
+        .header .client-name span {
+            background: rgba(255,255,255,0.12);
+            padding: 2px 12px;
+            border-radius: 6px;
+        }
+        .header .date {
+            font-size: 13px;
+            opacity: 0.6;
+            margin-top: 12px;
+            position: relative;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .hero-icon {
+            flex-shrink: 0;
+            width: 72px;
+            height: 72px;
+            background: var(--primary-light);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+        .hero-text h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .hero-text p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        .hero-text p strong {
+            color: var(--text);
+        }
+
+        /* ===== SECTION ===== */
+        .section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon-circle {
+            width: 34px;
+            height: 34px;
+            background: var(--primary-light);
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Check-list */
+        .checklist { list-style: none; }
+        .checklist li {
+            padding: 11px 0;
+            border-bottom: 1px solid #f3f4f8;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14.5px;
+            line-height: 1.5;
+        }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist .check {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 17px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .checklist .highlight {
+            background: #fef9c3;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .checklist .tag-bonus {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 4px;
+        }
+
+        /* ===== SOBRE ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .about-card {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .about-card .num {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .about-card .label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+        .partner-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 8px 16px;
+            background: var(--primary-light);
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .partner-link:hover {
+            background: #d0e8f4;
+        }
+        .partner-link img {
+            height: 24px;
+            width: auto;
+        }
+
+        /* ===== PRICING ===== */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .pricing-card {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 28px 24px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .pricing-card.featured {
+            background: linear-gradient(135deg, var(--primary-light) 0%, #f0f7ff 100%);
+            border-color: var(--primary);
+            border-width: 2px;
+            position: relative;
+        }
+        .pricing-card.featured::after {
+            content: 'RECOMENDADO';
+            position: absolute;
+            top: -10px;
+            right: 16px;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 10px;
+            letter-spacing: 0.5px;
+        }
+        .pricing-card .p-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+        .pricing-card .p-value {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+        .pricing-card .p-value .currency { font-size: 18px; }
+        .pricing-card .p-desc {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+        .pricing-card .p-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 12px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .pricing-card .p-badge.green {
+            background: var(--green);
+        }
+
+        /* Total */
+        .total-box {
+            text-align: center;
+            padding: 28px 24px;
+            background: linear-gradient(135deg, var(--dark) 0%, #2d2d4a 100%);
+            border-radius: 12px;
+            color: var(--white);
+            margin-top: 20px;
+        }
+        .total-box .t-label { font-size: 13px; opacity: 0.7; font-weight: 500; }
+        .total-box .t-value { font-size: 40px; font-weight: 800; margin: 4px 0; letter-spacing: -1px; }
+        .total-box .t-sub { font-size: 13px; opacity: 0.6; }
+
+        /* Bonus */
+        .bonus-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%);
+            border: 1px solid #fbbf24;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .bonus-box .b-icon { font-size: 40px; flex-shrink: 0; }
+        .bonus-box .b-text h3 { font-size: 17px; font-weight: 700; color: #92400e; }
+        .bonus-box .b-text p { font-size: 14px; color: #92400e; opacity: 0.85; margin-top: 2px; }
+
+        /* ===== NO CONTRACT ===== */
+        .no-contract {
+            text-align: center;
+            padding: 24px;
+            background: var(--bg);
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 1px dashed var(--border);
+        }
+        .no-contract p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        .no-contract strong {
+            color: var(--primary);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 32px 0 16px;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+        .footer .f-logo {
+            height: 28px;
+            width: auto;
+            opacity: 0.5;
+            margin-bottom: 8px;
+        }
+        .footer strong { color: var(--text); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .container { padding: 16px 12px 32px; }
+            .header { padding: 32px 20px 28px; }
+            .header h1 { font-size: 22px; }
+            .hero { flex-direction: column; text-align: center; padding: 24px; }
+            .hero-icon { margin: 0 auto; }
+            .section { padding: 24px 20px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card .p-value { font-size: 28px; }
+            .total-box .t-value { font-size: 32px; }
+            .bonus-box { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <div class="header-brand">
+                <img src="https://canis.marketing/wp-content/uploads/2022/07/cropped-Canis-marketing-logo.png"
+                     alt="Canis Marketing"
+                     onerror="this.style.display='none'">
+                <span class="header-badge">🐺 Google Partner</span>
+            </div>
+            <h1>Proposta Comercial</h1>
+            <div class="client-name">Para <span>Rinovva Vistorias</span></div>
+            <div class="date">Maio de 2026</div>
+        </header>
+
+        <!-- ===== HERO ===== -->
+        <div class="hero">
+            <div class="hero-icon">📱</div>
+            <div class="hero-text">
+                <h2>Sua vistoria imobiliária no próximo nível</h2>
+                <p>
+                    <strong>Rinovva Vistorias</strong> é uma plataforma completa para gestão de vistorias imobiliárias.
+                    Nossa proposta é impulsionar o <strong>lançamento do aplicativo</strong> com campanhas de
+                    <strong>Instagram Ads</strong> focadas em <strong>instalação do app</strong> e
+                    <strong>cadastro de novos usuários</strong> na landing page.
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== SERVIÇOS ===== -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon-circle">✅</span>
+                Nossa Gestão de Instagram Ads
+            </h2>
+            <ul class="checklist">
+                <li>
+                    <span class="check">✓</span>
+                    2 especialistas certificados pelo Google/Meta cuidando da sua conta
+                </li>
+                <li>
+                    <span class="check">✓</span>
+                    Análise de concorrência e segmentação estratégica do público-alvo
+                </li>
+                <li>
+                    <span class="check">✓</span>
+                    Campanha de <strong>Instalação de Aplicativo</strong> (Google Play / App Store)
+                </li>
+                <li>
+                    <span class="check">✓</span>
+                    Campanha de <strong>Cadastro na Landing Page</strong> — geração de leads qualificados
+                </li>
+                <li>
+                    <span class="check">✓</span>
+                    Configuração de Pixel do Meta + SDK de conversão do app
+                </li>
+                <li>
+                    <span class="check">✓</span>
+                    <span class="highlight">2 criativos novos por semana</span> (Reels, Stories, Carrossel)
+                </li>
+                <li>
+                    <span class="check">✓</span>
+                    Página de Vendas profissional <span class="tag-bonus">🎁 COMODATO</span>
+                </li>
+                <li>
+                    <span class="check">✓</span>
+                    Criação e estruturação de todas as campanhas
+                </li>
+                <li>
+                    <span class="check">✓</span>
+                    Acompanhamento e otimização diária dos anúncios
+                </li>
+                <li>
+                    <span class="check">✓</span>
+                    Suporte ágil e diário via WhatsApp
+                </li>
+                <li>
+                    <span class="check">✓</span>
+                    Relatório semanal de resultados
+                </li>
+            </ul>
+        </div>
+
+        <!-- ===== SOBRE ===== -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon-circle">🏆</span>
+                Sobre a Canis Marketing
+            </h2>
+            <p style="font-size:14px;color:var(--text-light);margin-bottom:16px;">
+                <strong style="color:var(--primary);">Táticos como Lobos, adaptáveis como coiotes e Leais como Cães.</strong><br>
+                Somos uma agência de performance focada em resultados — sem contratos abusivos, sem promessas vazias.
+            </p>
+
+            <a href="https://www.google.com/partners/agency?id=9240380245"
+               target="_blank"
+               class="partner-link">
+                <img src="https://canis.marketing/wp-content/uploads/2022/07/Certificied-Google-Partner-Agency.webp"
+                     alt="Google Partner"
+                     onerror="this.style.display='none'">
+                Verificar Selo Google Partner
+            </a>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="num">60+</div>
+                    <div class="label">Empresas atendidas no Brasil</div>
+                </div>
+                <div class="about-card">
+                    <div class="num">R$ 6M+</div>
+                    <div class="label">Gerenciados em anúncios</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== INVESTIMENTO ===== -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon-circle">💼</span>
+                O Investimento
+            </h2>
+            <p style="font-size:14px;color:var(--text-light);margin-bottom:8px;">
+                Dividimos em duas partes para ficar bem claro:
+            </p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <div class="p-label">💼 Nosso Serviço</div>
+                    <div class="p-value"><span class="currency">R$</span> 1.200</div>
+                    <div class="p-desc">/ mês — Gestão completa de Instagram Ads</div>
+                    <div class="p-badge">Sem fidelidade</div>
+                </div>
+                <div class="pricing-card">
+                    <div class="p-label">📊 Mídia (Instagram)</div>
+                    <div class="p-value"><span class="currency">R$</span> 100</div>
+                    <div class="p-desc">/ dia · ~R$ 3.000/mês<br>Pago diretamente ao Meta</div>
+                    <div class="p-badge green">Investimento em mídia</div>
+                </div>
+            </div>
+
+            <div class="total-box">
+                <div class="t-label">Investimento Total Estimado</div>
+                <div class="t-value">R$ 4.200 <span style="font-size:18px;font-weight:400;opacity:0.7;">/ mês</span></div>
+                <div class="t-sub">R$ 1.200 (serviço) + R$ 3.000 (mídia Instagram)</div>
+            </div>
+
+            <div class="bonus-box">
+                <div class="b-icon">🎁</div>
+                <div class="b-text">
+                    <h3>Landing Page Profissional Grátis</h3>
+                    <p>Página de vendas completa fornecida em comodato — sem custo adicional.
+                    Criamos uma LP otimizada para conversão de cadastros no seu aplicativo.</p>
+                </div>
+            </div>
+
+            <div class="no-contract">
+                <p>
+                    📌 <strong>Sem fidelidade.</strong> Se quiser cancelar no mês seguinte, pode.
+                    A qualidade do trabalho e os resultados gerados é o que nos mantém.
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer">
+            <img src="https://canis.marketing/wp-content/uploads/2022/07/cropped-Canis-marketing-logo.png"
+                 alt="Canis Marketing"
+                 class="f-logo"
+                 onerror="this.style.display='none'">
+            <br>
+            <strong>Canis Marketing</strong> — Performance que gera resultados<br>
+            🐺 Google Partner · canismarketing.com.br
+        </div>
+
+    </div>
+</body>
+</html>
